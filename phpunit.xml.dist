@@ -8,7 +8,7 @@
 >
     <testsuites>
         <testsuite name="Easy System - Loader Test Suite">
-            <directory>./test/</directory>
+            <directory>test</directory>
         </testsuite>
     </testsuites>
     <filter>
