@@ -9,9 +9,7 @@
  */
 namespace Es\Loader;
 
-if (! class_exists('Es\Loader\Normalizer', false)) {
-    require_once 'Normalizer.php';
-}
+require_once 'Normalizer.php';
 
 /**
  * Implementation of PSR-4 class loader.
