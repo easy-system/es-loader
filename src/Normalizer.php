@@ -24,10 +24,10 @@ class Normalizer
      */
     public static function path($path, $trailingSlash = true)
     {
-        $path = str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $path);
-        $path = rtrim($path, DIRECTORY_SEPARATOR);
+        $path = str_replace(['\\', '/'], PHP_DS, $path);
+        $path = rtrim($path, PHP_DS);
         if ($trailingSlash) {
-            $path .= DIRECTORY_SEPARATOR;
+            $path .= PHP_DS;
         }
 
         return $path;

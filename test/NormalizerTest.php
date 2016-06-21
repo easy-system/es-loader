@@ -15,23 +15,15 @@ class NormalizerTest extends \PHPUnit_Framework_TestCase
 {
     public function testPathWithTrailingSlash()
     {
-        $path = 'foo/bar\\baz//';
-
-        $expected = 'foo' . DIRECTORY_SEPARATOR
-                  . 'bar' . DIRECTORY_SEPARATOR
-                  . 'baz' . DIRECTORY_SEPARATOR;
-
+        $path     = 'foo/bar\\baz//';
+        $expected = 'foo' . PHP_DS . 'bar' . PHP_DS . 'baz' . PHP_DS;
         $this->assertEquals($expected, Normalizer::path($path));
     }
 
     public function testPathWithoutTrailingSlash()
     {
-        $path = 'foo/bar\\baz//';
-
-        $expected = 'foo' . DIRECTORY_SEPARATOR
-                  . 'bar' . DIRECTORY_SEPARATOR
-                  . 'baz';
-
+        $path     = 'foo/bar\\baz//';
+        $expected = 'foo' . PHP_DS . 'bar' . PHP_DS . 'baz';
         $this->assertEquals($expected, Normalizer::path($path, false));
     }
 

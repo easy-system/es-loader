@@ -124,10 +124,7 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
         $prefix = 'Es\\Loader\\Test\\Files\\Foo';
         $class  = 'Es\\Loader\\Test\\Files\\Foo\\SomeClass';
 
-        $path = __DIR__ . DIRECTORY_SEPARATOR
-              . 'files' . DIRECTORY_SEPARATOR
-              . 'Foo' . DIRECTORY_SEPARATOR
-              . 'src' . DIRECTORY_SEPARATOR;
+        $path = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Foo' . PHP_DS . 'src' . PHP_DS;
 
         $file = $path . 'SomeClass.php';
 
@@ -141,10 +138,7 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
         $prefix = 'Es\\Loader\\Test\\Files\\Foo';
         $class  = 'Es\\Loader\\Test\\Files\\Foo\\SomeelseClass';
 
-        $path = __DIR__ . DIRECTORY_SEPARATOR
-              . 'files' . DIRECTORY_SEPARATOR
-              . 'Foo' . DIRECTORY_SEPARATOR
-              . 'src' . DIRECTORY_SEPARATOR;
+        $path = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Foo' . PHP_DS . 'src' . PHP_DS;
 
         $loader->registerPath($prefix, $path);
         $this->assertFalse($loader->findFile($class));
@@ -156,11 +150,9 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
         $prefix = 'Es\\Loader\\Test\\Files\\Bar';
         $class  = 'Es\\Loader\\Test\\Files\\Bar\\HideawayClass';
 
-        $pathToBar = __DIR__ . DIRECTORY_SEPARATOR
-                   . 'files' . DIRECTORY_SEPARATOR
-                   . 'Bar' . DIRECTORY_SEPARATOR;
+        $pathToBar = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Bar' . PHP_DS;
 
-        $file = $pathToBar . 'src' . DIRECTORY_SEPARATOR . 'HideawayClass.php';
+        $file = $pathToBar . 'src' . PHP_DS . 'HideawayClass.php';
 
         $barDirectories = [
             'app',
@@ -182,12 +174,9 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
         $prefix = 'Es\\Loader\\Test\\Files\\Baz';
         $class  = 'Es\\Loader\\Test\\Files\\Baz\\Bat\\SubnamespacedClass';
 
-        $path = __DIR__ . DIRECTORY_SEPARATOR
-              . 'files' . DIRECTORY_SEPARATOR
-              . 'Baz' . DIRECTORY_SEPARATOR
-              . 'src' . DIRECTORY_SEPARATOR;
+        $path = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Baz' . PHP_DS . 'src' . PHP_DS;
 
-        $file = $path . 'Bat' . DIRECTORY_SEPARATOR . 'SubnamespacedClass.php';
+        $file = $path . 'Bat' . PHP_DS . 'SubnamespacedClass.php';
 
         $loader->registerPath($prefix, $path);
 
@@ -217,11 +206,9 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
     public function testFindFileFindsFileIfItPresentsInClassMap()
     {
         $class = 'Es\\Loader\\Test\\Files\\Foo\\SomeClass';
-        $file  = __DIR__ . DIRECTORY_SEPARATOR
-               . 'files' . DIRECTORY_SEPARATOR
-               . 'Foo' . DIRECTORY_SEPARATOR
-               . 'src' . DIRECTORY_SEPARATOR
-               . 'SomeClass.php';
+        $file  = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Foo' . PHP_DS
+               . 'src' . PHP_DS . 'SomeClass.php';
+
 
         $classMap = [
             $class => $file,
@@ -248,10 +235,7 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
         $namespace = 'Es\\Loader\\Test\\Files\\Foo\\';
         $class     = 'Es\\Loader\\Test\\Files\\Foo\\SomeClass';
 
-        $path = __DIR__ . DIRECTORY_SEPARATOR
-              . 'files' . DIRECTORY_SEPARATOR
-              . 'Foo' . DIRECTORY_SEPARATOR
-              . 'src' . DIRECTORY_SEPARATOR;
+        $path = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Foo' . PHP_DS . 'src' . PHP_DS;
 
         $file = $path . 'SomeClass.php';
 
@@ -280,10 +264,7 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
         $namespace = 'Es\\Loader\\Test\\Files\\Foo\\';
         $class     = 'Es\\Loader\\Test\\Files\\Foo\\SomeClass';
 
-        $path = __DIR__ . DIRECTORY_SEPARATOR
-              . 'files' . DIRECTORY_SEPARATOR
-              . 'Foo' . DIRECTORY_SEPARATOR
-              . 'src' . DIRECTORY_SEPARATOR;
+        $path = __DIR__ . PHP_DS . 'files' . PHP_DS . 'Foo' . PHP_DS . 'src' . PHP_DS;
 
         $file = $path . 'SomeClass.php';
 

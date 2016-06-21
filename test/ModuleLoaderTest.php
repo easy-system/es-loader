@@ -95,8 +95,8 @@ class ModuleLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testFindFileReturnsPathIfModuleFound()
     {
-        $path   = __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR;
-        $file   = $path . 'FooModule' . DIRECTORY_SEPARATOR . 'Module.php';
+        $path   = __DIR__ . PHP_DS . 'files' . PHP_DS;
+        $file   = $path . 'FooModule' . PHP_DS . 'Module.php';
         $class  = 'FooModule\\Module';
         $loader = new ModuleLoader();
         $loader->registerPath($path);
@@ -112,7 +112,7 @@ class ModuleLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testFindFileReturnsFalseIfClassIsNotModuleClass()
     {
-        $path   = __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR;
+        $path   = __DIR__ . PHP_DS . 'files' . PHP_DS;
         $class  = 'BarModule\\SomeClass';
         $loader = new ModuleLoader();
         $loader->registerPath($path);
@@ -127,8 +127,8 @@ class ModuleLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testLoadReturnsTrueIfFindModuleClass()
     {
-        $path   = __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR;
-        $file   = $path . 'FooModule' . DIRECTORY_SEPARATOR . 'Module.php';
+        $path   = __DIR__ . PHP_DS . 'files' . PHP_DS;
+        $file   = $path . 'FooModule' . PHP_DS . 'Module.php';
         $class  = 'FooModule\\Module';
         $loader = new ModuleLoader();
         $loader->registerPath($path);
